@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if IE 9]>     		<html class="no-js lte-ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> 	<html class="no-js"> <!--<![endif]-->
+	<head>
+		<!--force IE to render in latest mode, NOT compat mode. This must come first in the doc to work-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--Set the standard character set -->
+		<meta charset="utf-8">
+		<!--Force the viewport to render at 100% on most devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--A short description about the holistic website-->
+		<meta name="description" content="Welcome to the Front Range Multimedia Graphic Design (MGD) department. Here you can learn more about programs offered, the MGD Faculty, and much more!">
+		<!--Who did this thing?!-->
+		<meta name="author" content="Miriam Leon, Jessica Broumpton, & Michael Dryburgh">
+		<meta name="keywords" content="Multimedia, Graphic, Design, Front, Range, Community, College, Westminster, Boulder, Fort Collins, Brighton">
+		<!--Don't cache me in-->
+		<meta http-equiv="pragma" content="no-cache">
+		<title>Multimedia Graphic Design | Front Range Community College | Student Produced Website</title>		
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="imgs/mgdfavicon.ico" type="image/x-icon" />
+		<link rel="author" href="humans.txt">
+		<!--Call stylesheets here-->        		
+		<link href="styles/main.css" rel="stylesheet" type="text/css">
+		<!--This is the only javaScript that should be in the <head> tag. All other calls should be placed right before the closing </body> tag.-->         
+        
+		<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
+        <link href="styles/main.css" rel="stylesheet" type="text/css">      
+        <link rel="stylesheet" href="modern-slide-in/css/sequencejs-theme.modern-slide-in.css" />
+		<style>
+        .gradient-icon {
+			position: absolute;
+			top: 0;
+			right: 0;
+            height: 25px;
+            width: 25px;			
+            background:linear-gradient(to bottom, #fff 0%, #E5A023 20%, transparent 20%, transparent 40%, #fff 40%, #E5A023 60%, transparent 60%, transparent 80%, #fff 80%, #E5A023 100%);
+            cursor: pointer;
+        }
+        </style>
+</head>
+
+<body>
+<div class="gradient-icon">
+</div>
+
+<div class="sequence-theme">
+			<div id="sequence">
+
+				<img class="sequence-prev" src="images/bt-prev.png" alt="Previous Frame" />
+				<img class="sequence-next" src="images/bt-next.png" alt="Next Frame" />
+
+				<ul class="sequence-canvas">
+					<li class="animate-in">
+						<h2 class="title">Built using Sequence.js</h2>
+						<h3 class="subtitle">The Responsive Slider with Advanced CSS3 Transitions</h3>
+						<img class="model" src="images/model1.png" alt="Model 1" />
+					</li>
+					<li>
+						<h2 class="title">Creative Control</h2>
+						<h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
+						<img class="model" src="images/model2.png" alt="Model 2" />
+					</li>
+					<li>
+						<h2 class="title">Cutting Edge</h2>
+						<h3 class="subtitle">Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</h3>
+						<img class="model" src="images/model3.png" alt="Model 3" />
+					</li>
+				</ul>
+
+				<ul class="sequence-pagination">
+					<li><img src="images/tn-model1.png" alt="Model 1" /></li>
+					<li><img src="images/tn-model2.png" alt="Model 2" /></li>
+					<li><img src="images/tn-model3.png" alt="Model 3" /></li>
+				</ul>
+
+			</div>
+		</div>
+
+<div class="my-slide">
+          <img src="imgs/Graphic_Design/tiger.jpg">
+                <img src="imgs/Graphic_Design/global-warming.png">
+                <img src="imgs/Graphic_Design/chopaclysm.jpg">
+                <img src="imgs/Graphic_Design/zarkana.png">
+                <img src="imgs/Graphic_Design/AmandaEckenroth.png">
+                <img src="imgs/Graphic_Design/AnastasiaTodd.jpg">
+                <img src="imgs/Graphic_Design/BryantTran.jpg">
+                <img src="imgs/Graphic_Design/DavidHuerta.jpg">
+                <img src="imgs/Graphic_Design/EricaMcWhorter.jpg">
+                <img src="imgs/Graphic_Design/finalProject.png">
+                <img src="imgs/Graphic_Design/JasonJohnson.jpg">
+                <img src="imgs/Graphic_Design/JoseCenizares.jpg">
+                <img src="imgs/Graphic_Design/hatfield.jpg">
+        </div>
+        <!--CDN jQuery library with local fall back-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="scripts/plugins.js"></script>
+        <script src="modern-slide-in/scripts/jquery.sequence-min.js"></script>
+		<script src="modern-slide-in/sequencejs-options.modern-slide-in.js"></script>
+
+        <script>			
+			$(document).ready(function(){
+                $('#my-slide').DrSlider();
+            });
+		</script>
+</body>
+</html>
