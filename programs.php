@@ -69,7 +69,7 @@
 				<p>Learn industry-standard software in our interactive multimedia lab. Build a foundation in illustration, photo manipulation, web graphics, animation, 3D modeling, and digital video production. Once you master the core classes, focus on a specific area of emphasis by taking classes designed to enhance your skills in your chosen discipline.</p>            
 				<p>For more information on available degrees and certificates, please visit the <a href="http://www.frontrange.edu/programs-and-courses/academic-programs/multimedia-technology" title="multimedia technology" target="new">Multimedia Technology</a> Academic Programs page on the main FRCC website.</p>
 				
-				</br></br></br>
+				</br>
 				
 				<h2>SELECT A CLASS TO REGISTER:</h2>
             <?php
@@ -96,7 +96,7 @@
 
             //previous in if condition: $result->num_rows > 0
             If (mysqli_num_rows($result) > 0) {
-                 echo "<table><tr><th>Select</th><th>Course Num</th><th>Course Title</th></tr>";
+                 echo "<table><tr><th>Select</th><th>Course Number</th><th>Course Title</th></tr>";
                  // output data of ea ch row
                  while($row = mysqli_fetch_assoc($result)) {
                      echo "<tr><td>
