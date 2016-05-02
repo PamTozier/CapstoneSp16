@@ -11,34 +11,4 @@ $(document).ready(function ($) {
 	$(".burgerBtn").click(function(){
         $(".mobileNav").toggle();
     });		
-	
-	// Slider for Graphic Design page.
-	$('.gdslider').bxSlider({
-		responsive: true,			  
-		adaptiveHeight: true,
-		mode: 'horizontal',
-		auto: true,
-		autoControls: true,
-		randomStart: true,
-		touchEnabled: true,
-		oneToOneTouch: true,
-		autoHover: true,
-		slideWidth: 600,
-		pager: false
-	});	
-	
-	// Slider for Web Design page.
-	$('.wdslider').bxSlider({
-		responsive: true,			  
-		adaptiveHeight: true,
-		mode: 'horizontal',
-		auto: true,
-		autoControls: true,
-		randomStart: true,
-		touchEnabled: true,
-		oneToOneTouch: true,
-		autoHover: true,
-		slideWidth: 600,
-		pager: false
-	});	
 });
