@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+/********************************Slideshow*********************************************/
+#slideshow {
+	display: none;	
+	background: rgba(78, 95, 97, 0.7);
+	position: fixed;
+	top: 0;	
+	left: 0;
+	bottom: 0;
+	right: 0; 
+	overflow: hidden;	
+ }
+  
+ #gGlry, #wGlry {
+	display: inline-block;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 8.5%;
+	right: 8.5%;
+	bottom: 0;
+	width: 83%;
+	height: 92%;
+	
+	margin: 2% auto;	
+	list-style: none;
+	overflow: hidden;
+	text-align: center;				
+ }
+  
+.prev, .next, .close {
+  position: absolute;    
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;  
+  color: #FFFFFF;
+  opacity: 0.5;
+  text-decoration: none;
+  font-weight: 600;  
+  cursor: pointer;
+}
+
+.prev, .next {
+	top: 40%;
+	font-size: 56px;	
+}
+
+.prev {
+	left: 0;	
+}
+
+.next {
+	right: 0;	
+}
+
+.prev:hover, .next:hover {
+	background: #2A3342;
+}
+.displayWindow {
+	background: pink;
+	width: 100%;
+}
+
+.close {
+	top: 0;
+	right: 0;
+	font-size: 35px;
+	padding: 1%;	
+	background: red;
+	opacity: 0.6;
+}
+
+@media (max-width: 400px) {
+	height: 75%;	
+}
