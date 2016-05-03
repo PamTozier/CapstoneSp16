@@ -17,6 +17,48 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
+//get list of Courses
+$sql = "SELECT CourseNumber.CourseID, CourseNumber.CourseNum, CourseNumber.CourseCredit, CourseDesc.CourseTitle FROM CourseDesc
+JOIN CourseNumber
+ON CourseDesc.CourseID=CourseNumber.CourseNum;";
+
+//Echo "the results are: " . $sql;
+$result = mysqli_query($conn, $sql);
+
+
+//previous in if condition: $result->num_rows > 0
+If (mysqli_num_rows($result) > 0) {
+   echo "<table><tr><th>Select&#8195;</th><th>&#8195;Index</th><th>Course Num&#8195;</th><th>Course Title&#8195;</th><th>Course Credits</th></tr>";
+     // output data of ea ch row
+     while($row = mysqli_fetch_array($result)) {
+        $CourseArray[] = $row;
+         echo "<tr><td>
+         <form method='POST' action='registerform1.php'><input type='submit' name='CourseArray' value='Select'&#8195;/>
+         </td><td>&#8195;" . $row["CourseID"]. "&#8195;</td><td>" . $row["CourseNum"]. "&#8195;</td><td>" . $row["CourseTitle"]. "&#8195; </td><td>&#8195;" . $row["CourseCredit"]. " </td></tr></form>";
+     echo $CourseArray[];
+     }
+     echo "</table>";
+
+  // $selection = "SELECT CourseDescription FROM Coursedesc Join CourseNumber.CourseNum=CourseDesc.CourseID ON CourseNumber;"
+} else {
+   echo "0 results";
+}
+
+$conn->close();
+
+// Check for form submission:
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+}
+$Choice = "SELECT CourseNum, CourseTitle FROM CourseNumber Where $CourseArray=CourseNumber.CourseID-1;";
+
+$conn->close();
+*/
+
 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -33,7 +75,7 @@ if ($conn->connect_error) {
         $ln = trim($_POST['SLname']);    
         $e = trim($_POST['Semail']);
         $p = trim($_POST['Sphone']);  
-
+        $Choice = "SELECT CourseNum, CourseTitle FROM CourseNumber Where $CourseArray[$row]=CourseNumber.CourseID-1;";
        //    echo $fn . 'First Name ' . 'Last Name' . $ln;
    $errors = array(); // Initialize an error array.
     
@@ -77,7 +119,7 @@ if ($conn->connect_error) {
         
             // Print a message:
             echo '<h1>Thank you! ' . $fn . '</h1>
-        <p>You are now registered for " . $CourseNum . " " . $CourseTitle . ".</p><p><br /></p>';    
+        <p>You are now registered for ' . $Choice . '.</p><p><br /></p>';    
         
         } else { // If it did not run OK.
             
