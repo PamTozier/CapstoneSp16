@@ -35,7 +35,7 @@ If (mysqli_num_rows($result) > 0) {
          echo "<tr><td>
          <form method='POST' action='registerform1.php'><input type='submit' name='CourseArray' value='Select'&#8195;/>
          </td><td>&#8195;" . $row["CourseID"]. "&#8195;</td><td>" . $row["CourseNum"]. "&#8195;</td><td>" . $row["CourseTitle"]. "&#8195; </td><td>&#8195;" . $row["CourseCredit"]. " </td></tr></form>";
-     echo $CourseArray[];
+     echo $CourseArray;
      }
      echo "</table>";
 
