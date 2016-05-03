@@ -1,9 +1,5 @@
 <?php # Script 9.5 - register.php #2
-// This script performs an INSERT query to add a record to the users table.
-/*session_start();
 
-$_SESSION['CourseNum'];
-$_SESSION['CourseTitle'];*/
 
 $page_title = 'Registration';
 $servername = "localhost";
@@ -17,47 +13,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
-//get list of Courses
-$sql = "SELECT CourseNumber.CourseID, CourseNumber.CourseNum, CourseNumber.CourseCredit, CourseDesc.CourseTitle FROM CourseDesc
-JOIN CourseNumber
-ON CourseDesc.CourseID=CourseNumber.CourseNum;";
-
-//Echo "the results are: " . $sql;
-$result = mysqli_query($conn, $sql);
-
-
-//previous in if condition: $result->num_rows > 0
-If (mysqli_num_rows($result) > 0) {
-   echo "<table><tr><th>Select&#8195;</th><th>&#8195;Index</th><th>Course Num&#8195;</th><th>Course Title&#8195;</th><th>Course Credits</th></tr>";
-     // output data of ea ch row
-     while($row = mysqli_fetch_array($result)) {
-        $CourseArray[] = $row;
-         echo "<tr><td>
-         <form method='POST' action='registerform1.php'><input type='submit' name='CourseArray' value='Select'&#8195;/>
-         </td><td>&#8195;" . $row["CourseID"]. "&#8195;</td><td>" . $row["CourseNum"]. "&#8195;</td><td>" . $row["CourseTitle"]. "&#8195; </td><td>&#8195;" . $row["CourseCredit"]. " </td></tr></form>";
-     echo $CourseArray;
-     }
-     echo "</table>";
-
-  // $selection = "SELECT CourseDescription FROM Coursedesc Join CourseNumber.CourseNum=CourseDesc.CourseID ON CourseNumber;"
-} else {
-   echo "0 results";
-}
 
 $conn->close();
-
-// Check for form submission:
-/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-}
-$Choice = "SELECT CourseNum, CourseTitle FROM CourseNumber Where $CourseArray=CourseNumber.CourseID-1;";
-
-$conn->close();
-*/
 
 
 // Check for form submission:
@@ -68,15 +25,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
-   // require ('../mysqli_connect.php'); // Connect to the db.
+
 
         $fn = trim($_POST['SFname']);   
-     //   echo 'First' . $fn;  
         $ln = trim($_POST['SLname']);    
         $e = trim($_POST['Semail']);
         $p = trim($_POST['Sphone']);  
-        $Choice = "SELECT CourseNum, CourseTitle FROM CourseNumber Where $CourseArray[$row]=CourseNumber.CourseID-1;";
-       //    echo $fn . 'First Name ' . 'Last Name' . $ln;
+        $c = trim($_POST['Course']);
+   
    $errors = array(); // Initialize an error array.
     
     // Check for a first name:
@@ -100,13 +56,21 @@ if ($conn->connect_error) {
         $e = mysqli_real_escape_string($conn, trim($_POST['Semail']));
     }
     
-    // Check for a password and match against the confirmed password:
+    // Check for a phone number:
     if (empty($_POST['Sphone'])) {
             $errors[] = 'You forgot to enter your phone number.';
         } else {
             $p = mysqli_real_escape_string($conn, trim($_POST['Sphone']));
        
     }
+    //Check for the course selection
+    if(empty($_POST['Course'])){
+ echo $_POST['Course'] . "Course Number";
+    } else{
+
+    $c = mysqli_real_escape_string($conn, trim($_POST['Course']));  // Storing Selected Value In Variable
+
+}
     
     if (empty($errors)) { // If everything's OK.
     
@@ -115,11 +79,29 @@ if ($conn->connect_error) {
         // Make the query:
         $q = "INSERT INTO student (SFname, SLname, Semail, Sphone) VALUES ('$fn', '$ln', '$e', '$p');";       
         $r = @mysqli_query ($conn, $q); // Run the query.
+        
         if ($r) { // If it ran OK.
         
             // Print a message:
-            echo '<h1>Thank you! ' . $fn . '</h1>
-        <p>You are now registered for ' . $Choice . '.</p><p><br /></p>';    
+            echo '<h1>Thank you! </h1>
+        <p>'.$fn .' ' . $ln . ' you are now registered for:  </p>'
+        $sql2 = "SELECT CourseNumber.CourseNum, CourseNumber.CourseTitle, 
+        CourseDesc.CourseDescription FROM CourseNumber 
+        Where CourseNumber.CourseNum=$c;";
+        
+        $course= @mysqli_query ($conn,$sql2);
+        
+        If (mysqli_num_rows($result) > 0) {
+     echo "<table><tr><th>Course Num&#8195;</th><th>Course Title&#8195;</th><th>Course Credits</th></tr>";
+     // output data of the query
+     while($row = mysqli_fetch_assoc($course)) {
+         echo "<tr><td>" . $row["CourseNum"]. "&#8195;</td><td>" . $row["CourseTitle"]. "
+         &#8195; </td><td>&#8195;" . $row["CourseCredit"]. " </td><td>&#8195;" . $row["CourseDescription"]. " </td></tr></form>";
+    echo "</table>";
+    
+        
+
+
         
         } else { // If it did not run OK.
             
@@ -130,11 +112,17 @@ if ($conn->connect_error) {
             // Debugging message:
             echo '<p>' . mysqli_error($conn) . '<br /><br />Query: ' . $q . '</p>';
                         
-        } // End of if ($r) IF.
+        } 
+            //get course Information from database
+        $sql2 = "SELECT CourseNumber.CourseNum, CourseNumber.CourseTitle, 
+        CourseDesc.CourseDescription FROM CourseNumber 
+        Where CourseNumber.CourseNum=$c;";
+        //run the query
+        $course= @mysqli_query ($conn,$sql2);
+        //print the course details
+            echo $course;
+        // End of if ($r) IF.
         
-        //mysqli_close($conn); // Close the database connection.
-
-        // Include the footer and quit the script:
         
         exit();
         
@@ -160,6 +148,53 @@ if ($conn->connect_error) {
     <p>Last Name: <input type="text" name="SLname" size="15" maxlength="40" value="<?php if (isset($_POST['SLname'])) echo $_POST['SLname']; ?>" /></p>
     <p>Email Address: <input type="text" name="Semail" size="20" maxlength="60" value="<?php if (isset($_POST['Semail'])) echo $_POST['Semail']; ?>"  /> </p>
     <p>Phone: <input type="text" name="Sphone" size="10" maxlength="20" value="<?php if (isset($_POST['Sphone'])) echo $_POST['Sphone']; ?>"  /></p>
-    
+    <select name='Course'>
+<option value='CIS 145'>CIS 145</option>
+<option value='CIS 243'>CIS 243</option>
+<option value='CSC 119'>CSC 119</option>
+<option value='CWB 205'>CWB 205</option>
+<option value='CWB 208'>CWB 208</option>
+<option value='MGD 111'>MGD 111</option>
+<option value='MGD 141'>MGD 141</option>
+</select>
+
     <p><input type="submit" name="submit" value="Register" /></p>
 </form>
+<?php
+/*$sql = "SELECT CourseNumber.CourseID, CourseNumber.CourseNum, CourseNumber.CourseCredit, CourseDesc.CourseTitle FROM CourseDesc
+JOIN CourseNumber
+ON CourseDesc.CourseID=CourseNumber.CourseNum;";
+*/
+//$res=$conn->query($sql);
+//$row[i] = $res->fetch_array(MYSQLI_BOTH);
+
+//echo $row[i];
+?>
+<!-- <form action='#' method='POST'>
+<select name='Course Number'>
+<option value='CourseNum'>'CIS 145'</option>
+<option value='CourseNum'>'CIS 243'</option>
+<option value='CourseNum'>'CSC 119'</option>
+<option value='CourseNum'>'CWB 205'</option>
+<option value='CourseNum'>'CWB 208'</option>
+<option value='CourseNum'>'MGD 111'</option>
+<option value='CourseNum'>'MGD 141'</option>
+</select>
+<input type='submit' name='Course Number' value='Get Selected Values' />
+</form> -->
+<?php
+/*if(isset($_POST['submit'])){
+
+$selected_val = $_POST['Course Number'];  // Storing Selected Value In Variable
+
+echo $selected_val;
+
+$sql2 = "SELECT CourseNumber.CourseNum, CourseNumber.CourseTitle, 
+CourseDesc.CourseDescription FROM CourseNumber 
+Where CourseNumber.CourseNum=$selected_val;";
+$course=$conn->query($sql2);
+
+echo "You have selected :" .$course;  // Displaying Selected Value
+}
+*/
+?>
