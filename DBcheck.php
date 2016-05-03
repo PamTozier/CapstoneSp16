@@ -1,5 +1,7 @@
 <html><body>
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -23,14 +25,15 @@ $result = mysqli_query($conn, $sql);
 
 //previous in if condition: $result->num_rows > 0
 If (mysqli_num_rows($result) > 0) {
-     echo "<table><tr><th>Select</th><th>Course Num</th><th>Course Title</th></tr>";
+     echo "<table><tr><th>Select&#8195;</th><th>Course Num&#8195;</th><th>Course Title&#8195;</th><th>Course Credits</th></tr>";
      // output data of ea ch row
      while($row = mysqli_fetch_assoc($result)) {
          echo "<tr><td>
-         <form method='POST' action='registration.php'><input type='submit' name='Register' value='Select'/></form>
-         </td><td>" . $row["CourseNum"]. "</td><td>" . $row["CourseTitle"]. " </td></tr>";
+         <form method='POST' action='registerform.php'><input type='submit' name='Register' value='Select'&#8195;/>
+         </td><td>" . $row["CourseNum"]. "&#8195;</td><td>" . $row["CourseTitle"]. "&#8195; </td><td>&#8195;" . $row["CourseCredit"]. " </td></tr></form>";
      }
      echo "</table>";
+  /*   $selection = "SELECT CourseDescription FROM Coursedesc Join CourseNumber.CourseNum=CourseDesc.CourseID ON CourseNumber;"*/
 } else {
      echo "0 results";
 }
