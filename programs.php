@@ -17,18 +17,18 @@
 		<meta http-equiv="pragma" content="no-cache">
 		<title>Multimedia Graphic Design | Front Range Community College | Student Produced Website</title>		
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link rel="shortcut icon" href="imgs/mgdfavicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="imgs/mgdfavicon.ico" type="image/x-icon">
 		<link rel="author" href="humans.txt">
-		<!--Call stylesheets here-->        		
+		<!--Call stylesheets here-->		
 		<link href="styles/main.css" rel="stylesheet" type="text/css">
 		<!--This is the only javaScript that should be in the <head> tag. All other calls should be placed right before the closing </body> tag.-->
-		<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>        
+		<script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
 	</head>
 	<body>
 		<!--[if lte IE 8]>
 	        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	    <![endif]-->
-        <div class="wrapper">       
+        <div class="wrapper">
         
         <header role="banner">
         	<h1><img src="imgs/header_MGD.jpg" alt="Background image of Denver for document header"></h1>
@@ -37,8 +37,8 @@
                     <img src="imgs/FRCC-Logo_white.png" alt="Front Range Community College Logo" class="logo">
                 </div>
                 <div class="headerRight">
-                  <h1 class="topHeading">Multimedia</h1>
-                  <h1 class="bottomHeading">Graphic Design</h1>
+					<h1 class="topHeading">Multimedia</h1>
+					<h1 class="bottomHeading">Graphic Design</h1>
                 </div>
                 <div class="contactUs">
                 	<h2>Contact Us</h2>
@@ -60,50 +60,53 @@
                 <li><a href="faculty.html">Faculty Info</a></li>
                 <li><a href="lab.html">Lab Times</a></li>
             </ul>
-        </nav>        
-        
-        <article class="about" role="main">
-            <section class="leftSection">
-            	<div class="mainPara">
-                    <h3>Welcome to the MGD Department</h3>
-                    <p>where you can learn industry-standard software and graphic design principles in our interactive multimedia labs.</p>
-                    <p>Build a foundation in page layout, print technology, typography, illustration, photo manipulation, web design, animation, 3D modeling, and digital video production.</p>
-                    <p>We offer both Certificates and Associates Degrees in the Multimedia Graphic Design Program. We offer traditional classes in computer labs led by instructors at the Westminster, Boulder, and Larimer campuses. Online classes are also available.</p>
-                </div>
-                <div class="buttonWrapper">
-                    <div class="frccButton">
-                        <p><a href="https://myportal.cccs.edu/jsp/misc/schoolLoginNew.jsp?school=frcc" target="_blank">Register for Classes</a></p>
-                    </div>                
-                    <div class="frccButton">
-                        <p><a href="http://www.frontrange.edu/" target="_blank">Back to FRCC</a></p>
-                    </div>
-                </div>
-            </section>
-            <section class="rightSection">
-            	<p><img src="imgs/smiling-laptop-student-Rido.jpg" alt="Image of smiling student working on a laptop"></p>
-            </section>
-        </article>
-         
-        <div class="galleryButtons">
-        	<div class="twoButtons1">
-                <div class="galleryButton">
-                    <p><a href="graphicdesign.html"><img src="imgs/graphicdesign_button.gif" alt="Graphic Design Button"></a></p>
-                </div>
-                <div class="galleryButton">
-                    <p><a href="webdesign.html"><img src="imgs/website_button.gif" alt="Web Design Button"></a></p>
-                </div>
-            </div>
-            <div class="twoButtons2">
-                <div class="galleryButton">
-                    <p><a href="animationsound.html"><img src="imgs/animation_button.gif" alt="Animation Button"></a></p>
-                </div>
-                <div class="galleryButton">
-                    <p><a href="video.html"><img src="imgs/video_button.gif" alt="Video Button"></a></p>
-                </div>
-            </div>
+        </nav>
+  
+		<div class="columns" role="main">
+			<div class="column1">
+				<h2>ABOUT OUR PROGRAMS</h2>
+				<p>At Front Range Community College, students may take classes to earn either a Certificate or an Associate Degree. Credits from the State Guaranteed Education Courses are guaranteed to transfer to Colorado's public four-year institutions. Students may also take classes for personal enrichment or career enhancement.</p>            
+				<p>Learn industry-standard software in our interactive multimedia lab. Build a foundation in illustration, photo manipulation, web graphics, animation, 3D modeling, and digital video production. Once you master the core classes, focus on a specific area of emphasis by taking classes designed to enhance your skills in your chosen discipline.</p>            
+				<p>For more information on available degrees and certificates, please visit the <a href="http://www.frontrange.edu/programs-and-courses/academic-programs/multimedia-technology" title="multimedia technology" target="new">Multimedia Technology</a> Academic Programs page on the main FRCC website.</p>
+				
+				</br></br></br>
+				
+				<h2>SEARCH FOR CLASSES NOW:</h2>
+				</div>  
+				
+        <div class="column2">
+            <h2>DEGREES</h2>
+            <p>Multimedia Technology degrees have four tracks. The four emphases' are:</p>
+            <ul>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Associate-of-Applied-Science-Degree-Pathways/Digital-Animation" title="Multimedia Animation" target="new">Multimedia Animation</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Associate-of-Applied-Science-Degree-Pathways/Graphic-Design" title="Multimedia Graphic Design" target="new">Multimedia Graphic Design</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Associate-of-Applied-Science-Degree-Pathways/Video-Production-and-Editing" title="Multimedia Video" target="new">Multimedia Video</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Associate-of-Applied-Science-Degree-Pathways/Web-Design" title="Multimedia Web Design" target="new">Multimedia Web Design</a></li>
+            </ul>            
+            <p>All degrees and certificates require:</p>
+            <ul>
+                <li>MGD 111 - Adobe Photoshop I</li>  
+            </ul>            
+            <p>Most degrees and certificates require:</p>
+            <ul>
+                <li>MGD 102 - Introduction to Multimedia</li>
+                <li>MGD 112 - Adobe Illustrator</li>
+            </ul>            
+            <h2>CERTIFICATES</h2>
+            <p>Certificates provide an introduction to software use and graphic design principles for:</p>            
+            <ul>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Certificates/Digital-Animation" title="Multimedia Animation" target="new">Multimedia Animation</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Certificates/Multimedia" title="Multimedia General" target="new">Multimedia General</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Certificates/Graphic-Design-Technician" title="Multimedia Graphic Design" target="new">Multimedia Graphic Design</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Certificates/Video-Production-and-Editing" title="Multimedia Video" target="new">Multimedia Video</a></li>
+                <li><a href="http://frontrange.smartcatalogiq.com/en/2015-2016/Catalog/Degrees-and-Certificates/Multimedia-Technology/Multimedia-Technology-Certificates/Web-Design" title="Multimedia Web" target="new">Multimedia Web</a></li>
+            </ul>           
+            <p>Each degree has its own specific additional class requirements for completion.</p>
+            <p>For more information, visit the Multimedia Technology Academic Programs page on the main FRCC website.</p>
         </div>
-        
-        <footer role="contentinfo">
+    </div>
+
+<footer role="contentinfo">
             <ul>
                 <li>
                     <p>Westminster Campus<br>
@@ -148,8 +151,6 @@
             </p>
     	</footer>
         
-		</div>        
-        
         <div class="burgerBtn">        	
         </div>
         
@@ -172,13 +173,14 @@
             </ul>
             <div class="burgerBtn">        	
         	</div>
-        </nav>        
+        </nav>
         
+        </div>
         <!--CDN jQuery library with local fall back-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.1.min.js"><\/script>')</script>          
-        
-        <script src="scripts/plugins.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+		<script src="scripts/plugins.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         
         <script>

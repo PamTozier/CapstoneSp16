@@ -62,46 +62,14 @@
             </ul>
         </nav>        
         
-        <article class="about" role="main">
-            <section class="leftSection">
-            	<div class="mainPara">
-                    <h3>Welcome to the MGD Department</h3>
-                    <p>where you can learn industry-standard software and graphic design principles in our interactive multimedia labs.</p>
-                    <p>Build a foundation in page layout, print technology, typography, illustration, photo manipulation, web design, animation, 3D modeling, and digital video production.</p>
-                    <p>We offer both Certificates and Associates Degrees in the Multimedia Graphic Design Program. We offer traditional classes in computer labs led by instructors at the Westminster, Boulder, and Larimer campuses. Online classes are also available.</p>
-                </div>
-                <div class="buttonWrapper">
-                    <div class="frccButton">
-                        <p><a href="https://myportal.cccs.edu/jsp/misc/schoolLoginNew.jsp?school=frcc" target="_blank">Register for Classes</a></p>
-                    </div>                
-                    <div class="frccButton">
-                        <p><a href="http://www.frontrange.edu/" target="_blank">Back to FRCC</a></p>
-                    </div>
-                </div>
-            </section>
-            <section class="rightSection">
-            	<p><img src="imgs/smiling-laptop-student-Rido.jpg" alt="Image of smiling student working on a laptop"></p>
-            </section>
+        <article class="registration" role="main">
+            <div class="regBorder">
+				Test test.
+			
+			
+			
+			</div>
         </article>
-         
-        <div class="galleryButtons">
-        	<div class="twoButtons1">
-                <div class="galleryButton">
-                    <p><a href="graphicdesign.html"><img src="imgs/graphicdesign_button.gif" alt="Graphic Design Button"></a></p>
-                </div>
-                <div class="galleryButton">
-                    <p><a href="webdesign.html"><img src="imgs/website_button.gif" alt="Web Design Button"></a></p>
-                </div>
-            </div>
-            <div class="twoButtons2">
-                <div class="galleryButton">
-                    <p><a href="animationsound.html"><img src="imgs/animation_button.gif" alt="Animation Button"></a></p>
-                </div>
-                <div class="galleryButton">
-                    <p><a href="video.html"><img src="imgs/video_button.gif" alt="Video Button"></a></p>
-                </div>
-            </div>
-        </div>
         
         <footer role="contentinfo">
             <ul>
@@ -143,7 +111,7 @@
                 </li>
             </ul>
             <p class="copyright">
-            Copyright &copy; 2016<br>
+            Copyright &copy; 2015<br>
             Created by Front Range Community College Students: Miriam Leon, Danielle Arrick-Young, Michael Dryburgh, Anna Marie Sellars, Pamela Willis-Tozier
             </p>
     	</footer>
